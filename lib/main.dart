@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:instagram_clone/const/app_theme.dart';
 import 'package:instagram_clone/responsive/responsive_layout.dart';
 import 'package:instagram_clone/responsive/mobile_screen.dart/mobile_screen.dart';
-import 'package:instagram_clone/responsive/web_screen.dart';
+import 'package:instagram_clone/responsive/web_screen/web_screen.dart';
 
 void main() {
   runApp(const MyApp());
