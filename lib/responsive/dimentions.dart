@@ -1,0 +1,3 @@
+
+
+const webLayout = 600;
