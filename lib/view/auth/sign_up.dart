@@ -70,9 +70,15 @@ class SignUpScreen extends StatelessWidget {
                 isPass: true,
               ),
               const SizedBox(height: 24),
-              FilledButton(onPressed: () {
-                
-              }, child: const Text('Submit')),
+              FilledButton(
+                  onPressed: () async {
+                    String res = await AuthMethods().signUpUser(
+                        name: nameController.text,
+                        username: usernameController.text,
+                        email: emailController.text,
+                        password: passController.text);
+                  },
+                  child: const Text('Submit')),
               Flexible(
                 flex: 2,
                 child: Container(),

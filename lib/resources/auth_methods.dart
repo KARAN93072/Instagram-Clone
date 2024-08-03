@@ -16,9 +16,11 @@ class AuthMethods {
           username.isNotEmpty ||
           email.isNotEmpty ||
           password.isNotEmpty) {
+        ///Register User
         UserCredential cred = await _auth.createUserWithEmailAndPassword(
             email: email, password: password);
 
+        ///Add user to our database
         _firestore.collection('users').doc(cred.user!.uid).set({
           'name': name,
           'username': username,
@@ -28,9 +30,10 @@ class AuthMethods {
           'followers': [],
           'followiing': []
         });
+        res = 'success';
       }
     } catch (e) {
-      print(e);
+      res = e.toString();
     }
     return res;
   }
